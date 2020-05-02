@@ -1,0 +1,59 @@
+[
+{
+	"vAppTemplate": "bitnami-wordpress-5.4.1-0-linux-debian-9-x86_64",
+	"name": "WordPress 5.4.1 - Bitnami",
+	"summary": "The Bitnami WordPress Stack provides a one-click install solution for Wordpress.",
+	"description": "WordPress powers over 25% of all websites on the internet, making it the world's most popular blogging and content management platform. It is free and open source software developed entirely by its community, who have contributed over 45,000 themes, plugins, and widgets that enable an unlimited combination of features. Users can easily create and edit static webpages and blog posts using its intuitive editor. Without even thinking about details like browser compatibility or responsiveness, content creators are free to create and format text, images, and layout on every page and post. More tech savvy will appreciate having the ability to easily switch back and forth between a WYSIWYG editor and raw html for every page, and the underlying PHP that runs it all is available right through the interface.",
+	"version": "5.4.1-0",
+	"logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/wordpress/img/wordpress-stack-110x117.png",
+	"screenshots": "https://bitnami.com/stack/wordpress/default_screenshot",
+	"os": "Debian Linux 9-x86_64"
+},
+{
+	"vAppTemplate": "bitnami-elk-7.6.2-0-linux-debian-9-x86_64-nami",
+	"name": "ELK - Bitnami",
+	"summary": "The Bitnami ELK Stack provides a one-click install solution for ELK.",
+	"description": "ELK stack combines three open source projects for log management: Elasticsearch as a search and analytics engine, Logstash for centralizing logging and parsing, and Kibana for visualizing data.",
+	"version": "7.6.2-0",
+	"logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/elk/img/elk-stack-110x117.png",
+	"screenshots": "https://bitnami.com/stack/elk/default_screenshot",
+	"os": "Debian Linux 9-x86_64"
+},
+{
+	"vAppTemplate": "bitnami-jenkins-2.204.2-7-r01-linux-debian-9-x86_64-nami",
+	"name": "Jenkins - Bitnami",
+	"summary": "The Bitnami Jenkins Stack provides a one-click install solution for Jenkins.",
+	"description": "Ask a room of developers which CI system they're using and there is a good chance that several, if not most, will say Jenkins. Not wanting to see their favorite CI subsumed by Oracle, Jenkins was spun out in 2011 as its own product. It's widely recognized as the most feature-rich CI available with easy configuration, continuous delivery and continuous integration support, easily test, build and stage your app, and more. It supports multiple SCM tools including CVS, Subversion and Git. It can execute Apache Ant and Apache Maven-based projects as well as arbitrary scripts. Out of the box, the Bitnami Jenkins package includes Jenkins, Apache, Tomcat, and Git.",
+	"version": "2.204.2-7-r01",
+	"logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/jenkins/img/jenkins-stack-110x117.png",
+	"screenshots": "https://bitnami.com/stack/jenkins/default_screenshot",
+	"os": "Debian Linux 9-x86_64"
+},{
+	"vAppTemplate": "bitnami-lampstack-7.3.17-1-linux-debian-9-x86_64",
+	"name": "LAMP - Bitnami",
+	"summary": "Bitnami LAMP Stack provides a complete PHP, MySQL and Apache development environment for Linux that can be launched in one click.",
+	"description": "Bitnami LAMP Stack provides a complete, fully-integrated and ready to run LAMP development environment. In addition to PHP, MySQL and Apache, it includes FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD, cURL and other components and the following frameworks:Zend Framework, Symfony, CodeIgniter, CakePHP, Smarty, Laravel.",
+	"version": "7.3.17-1",
+	"logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/lampstack/img/lampstack-stack-110x117.png",
+	"screenshots": "https://bitnami.com/stack/lamp/default_screenshot",
+	"os": "Debian Linux 9-x86_64"
+},{
+	"vAppTemplate": "bitnami-mysql-8.0.19-5-r02-linux-debian-9-x86_64-nami",
+	"name": "MySQL - Bitnami",
+	"summary": "The Bitnami MySQL Stack provides a one-click install solution for MySQL.",
+	"description": "MySQL is a fast, reliable, scalable, and easy to use open source relational database system. Designed to handle mission-critical, heavy-load production applications.",
+	"version": "8.0.19-5-r02",
+	"logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/mysql/img/mysql-stack-110x117.png",
+	"screenshots": "https://bitnami.com/stack/mysql/default_screenshot",
+	"os": "Debian Linux 9-x86_64"
+},{
+	"vAppTemplate": "bitnami-postgresql-12.2.0-1-r01-linux-debian-9-x86_64-nami",
+	"name": "Postgresql - Bitnami",
+	"summary": "The Bitnami PostgreSQL Stack provides a one-click install solution for PostgreSQL.",
+	"description": "PostgreSQL (Postgres) is an open source object-relational database known for reliability and data integrity. ACID-compliant, it supports foreign keys, joins, views, triggers and stored procedures.",
+	"version": "12.2.0-1-r01",
+	"logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/postgresql/img/postgresql-stack-110x117.png",
+	"screenshots": "https://bitnami.com/stack/postgresql/default_screenshot",
+	"os": "Debian Linux 9-x86_64"
+}
+]
