@@ -51,7 +51,7 @@ $vCDCatalog = 'App Launchpad Catalog'
 $vCDOrg = 'AppLaucnhpad'
 $JSONfile = 'ALP-metadata.json'
 
-$mdjson = Get-Content .\Documents\ALP-metadata.json | ConvertFrom-Json
+$mdjson = Get-Content $JSONfile | ConvertFrom-Json
 
 $vCDCatalogObj = Get-Catalog -Name $vCDCatalog -Org $vCDOrg
 $mdjson | ForEach-Object {
