@@ -48,7 +48,7 @@ Function Create-ALPMetadata {
 # metadata to each record
 
 $vCDCatalog = 'App Launchpad Catalog'
-$vCDOrg = 'AppLaucnhpad'
+$vCDOrg = 'AppLaunchpad'
 $JSONfile = 'ALP-metadata.json'
 
 $mdjson = Get-Content $JSONfile | ConvertFrom-Json
