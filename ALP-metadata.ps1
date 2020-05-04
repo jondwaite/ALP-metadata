@@ -1,8 +1,14 @@
-﻿# ALP-metadata.ps1
+# ALP-metadata.ps1
 # Create / assign metadata entries for vAppTemplates in VMware App Launchpad
-# Version: 1.0, May 2nd 2020
+# Version: 1.1, May 4th 2020
 # License: MIT
 # Copyright 2020 Jon Waite, All Rights Reserved
+
+param(
+	[Parameter(Mandatory=$true)][String]$JSONfile,
+	[String]$vCDCatalog = "App Launchpad Catalog",
+	[String]$vCDOrg = "AppLaunchpad"
+)
 
 # Helper function to create MetadataEntry structure
 Function Create-MetadataEntry {
@@ -40,24 +46,23 @@ Function Create-ALPMetadata {
     if ($Version)           { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'version' -MDValue $Version }
     if ($LogoURI)           { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'logo' -MDValue ($LogoURI.AbsoluteUri) }
     if ($ScreenShotsURI)    { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'screenshots' -MDValue ($ScreenShotsURI.AbsoluteUri) }
-    if ($OS)                { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'os' -MDValue ($OS) }
+    if ($OS)                { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'os' -MDValue $OS }
+	if ($spec)				{ $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'spec' -MDValue $spec }
     return $Metadata
 }
 
 # Main process - read JSON file with metadata entries and loop through each assigning
 # metadata to each record
-
-$vCDCatalog = 'App Launchpad Catalog'
-$vCDOrg = 'AppLaunchpad'
-$JSONfile = 'ALP-metadata.json'
-
-$mdjson = Get-Content $JSONfile | ConvertFrom-Json
-
+$mdjson = Get-Content $JSONfile -Raw | ConvertFrom-Json
 $vCDCatalogObj = Get-Catalog -Name $vCDCatalog -Org $vCDOrg
+
+Write-Host ("Found $($mdjson.Count) entries in JSON file")
+
 $mdjson | ForEach-Object {
     Write-Host ("Processing metadata for $($_.vAppTemplate)")
-    $vAppTemplate = Get-CIVAppTemplate -Catalog $vCDCatalogObj -Name $_.vAppTemplate
-    $md = Create-ALPMetadata -Name $_.name -Summary $_.Summary -Description $_.Description -Version $_.version -LogoURI $_.logo -ScreenShotsURI $_.screenshots -OS $_.os
+	$md = Create-ALPMetadata -Name $_.name -Summary $_.Summary -Description $_.Description -Version $_.version -LogoURI $_.logo -ScreenShotsURI $_.screenshots -OS $_.os
+	$vAppName = $_.vAppTemplate
+    $vAppTemplate = Get-CIVAppTemplate -Catalog $vCDCatalogObj | Where { $_.Name -eq $vAppName }
     $vAppTemplate.ExtensionData.CreateMetadata($md)
 }
 Write-Host("Ended processing.")
