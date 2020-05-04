@@ -47,7 +47,7 @@ Function Create-ALPMetadata {
     if ($LogoURI)           { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'logo' -MDValue ($LogoURI.AbsoluteUri) }
     if ($ScreenShotsURI)    { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'screenshots' -MDValue ($ScreenShotsURI.AbsoluteUri) }
     if ($OS)                { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'os' -MDValue $OS }
-	if ($spec)				{ $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'spec' -MDValue $spec }
+    if ($spec)              { $Metadata.MetadataEntry += Create-MetadataEntry -MDKey 'spec' -MDValue $spec }
     return $Metadata
 }
 
