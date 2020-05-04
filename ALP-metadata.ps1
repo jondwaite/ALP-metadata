@@ -60,7 +60,7 @@ Write-Host ("Found $($mdjson.Count) entries in JSON file")
 
 $mdjson | ForEach-Object {
     Write-Host ("Processing metadata for $($_.vAppTemplate)")
-	$md = Create-ALPMetadata -Name $_.name -Summary $_.Summary -Description $_.Description -Version $_.version -LogoURI $_.logo -ScreenShotsURI $_.screenshots -OS $_.os
+	$md = Create-ALPMetadata -Name $_.name -Summary $_.Summary -Description $_.Description -Version $_.version -LogoURI $_.logo -ScreenShotsURI $_.screenshots -OS $_.os -spec $_.spec
 	$vAppName = $_.vAppTemplate
     $vAppTemplate = Get-CIVAppTemplate -Catalog $vCDCatalogObj | Where { $_.Name -eq $vAppName }
     $vAppTemplate.ExtensionData.CreateMetadata($md)
